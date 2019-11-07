@@ -1,0 +1,25 @@
+{
+  "name": "games",
+  "version": "1.0.0",
+  "description": "Rebuild of Troy Media",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.23.0"
+  },
+  "scripts": {
+    "sass": "sass sass/style.sass:style.css",
+    "watch-sass": "sass --watch sass/style.sass:style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristanhampton/roy-media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tristanhampton/roy-media/issues"
+  },
+  "homepage": "https://github.com/tristanhampton/roy-media#readme"
+}

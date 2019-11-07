@@ -1,0 +1,15 @@
+<?php $category_query = new WP_Query(array('category_name' => 'coffee')) ?>
+  <?php if($category_query->have_posts()): ?>
+  <section class="thumbnail-container">
+    <h2>Coffee</h2>
+
+    <?php while($category_query->have_posts()) : $category_query->the_post(); ?>
+    <div class="thumbnail">
+        <a href="<?php the_permalink() ?>">
+          <h3><?php the_field('title'); ?></h3>
+          <img src="<?php the_field('featured_image'); ?>">
+        </a>
+      </div>
+    <?php endwhile; ?>
+  </section>
+  <?php endif; ?>
