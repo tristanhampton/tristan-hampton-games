@@ -1,22 +1,23 @@
 <?php
 
-if (!function_exists('roy_media_setup')): 
-    function roy_media_setup()
+if (!function_exists('tristan_games_setup')): 
+    function tristan_games_setup()
     {
         add_theme_support( 'title-tag' );
+        add_theme_support('post-thumbnails');
     } 
 endif;
 
-add_theme_support("after_setup_theme", "roy_media_setup");
+add_theme_support("after_setup_theme", "tristan_games_setup");
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-function roy_media_styles()
+function tristan_games_styles()
 {
-    wp_enqueue_style('roy_media_reboot', get_template_directory_uri() . '/assets/css/reboot.css');
-    wp_enqueue_style('roy_media_styles', get_stylesheet_uri());
+    wp_enqueue_style('tristan_games_reboot', get_template_directory_uri() . '/assets/css/reboot.css');
+    wp_enqueue_style('tristan_games_styles', get_stylesheet_uri());
 }
 
-add_action('wp_enqueue_scripts', 'roy_media_styles');
+add_action('wp_enqueue_scripts', 'tristan_games_styles');
 
 
 //function creates a custom post type of movies

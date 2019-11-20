@@ -1,7 +1,7 @@
 {
   "name": "games",
   "version": "1.0.0",
-  "description": "Rebuild of Troy Media",
+  "description": "Games page for tristanhampton.ca",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
