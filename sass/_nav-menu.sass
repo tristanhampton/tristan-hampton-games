@@ -1,0 +1,43 @@
+body 
+  position: relative
+  .mobile-nav 
+    display: flex
+    justify-content: space-between
+    div
+      @media (max-width: 500px)
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        z-index: 500
+        margin: 1.2rem 0 0 0
+        ul 
+          padding: 0 0 0 2.4rem
+          height: 100%
+          text-align: right
+          background-color: #fff
+    @media (min-width: 500px)
+      display: none
+      flex-direction: unset
+      align-content: unset
+
+.desktop-nav
+  @media (max-width: 500px)
+    display: none
+  @media (min-width: 500px)
+      display: flex
+      justify-content: space-between
+      flex-direction: row
+      align-items: center
+  ul
+    @media (min-width: 500px)
+      display: flex
+      justify-content: space-between
+      flex-direction: row
+      width: 50%
+
+.hidden 
+  display: none

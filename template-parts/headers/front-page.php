@@ -1,3 +1,3 @@
     <header class="front-page-header">
-            <h2>Front Page Header</h2>
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/controller.svg" alt="">
     </header>

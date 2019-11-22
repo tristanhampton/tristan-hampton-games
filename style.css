@@ -14,49 +14,162 @@ html {
   box-sizing: border-box;
 }
 
-a:link, a:visited {
+body {
+  margin: 1.2rem auto 0;
+  width: 97%;
+}
+@media (min-width: 768px) {
+  body {
+    width: 75%;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    width: 60%;
+    max-width: 980px;
+  }
+}
+
+a:link {
   color: #111;
   text-decoration: none;
   transition: 1s ease;
+}
+a:visited {
+  color: #111;
 }
 a:hover, a:active {
   transition: 1s ease;
 }
 
-.mobile-menu {
-  display: flex;
-}
-@media (min-width: 768px) {
-  .mobile-menu {
-    display: none;
-  }
-}
-
-.desktop-nav {
-  display: none;
-}
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-  }
-}
-
-h1 {
-  font: 4.8rem/1.1 serif;
-}
-
-h2 {
-  font: 3.2rem/1.4 serif;
-}
-
-h3 {
-  font: 2.4rem/1.4 sereif;
+hr {
+  width: 70%;
+  color: #111;
 }
 
 p {
-  font: 1.8rem/1.6 serif;
+  margin-bottom: 1.2rem;
 }
 
+@font-face {
+  font-family: Butler;
+  src: url("assets/fonts/butler_regular.otf");
+}
+h1 {
+  font: 4.8rem/1.1 "Butler", serif;
+}
+
+h2 {
+  font: 3.2rem/1.4 "Butler", serif;
+}
+
+h3 {
+  font: 2.4rem/1.4 "Butler", serif;
+}
+
+p {
+  font: 1.8rem/1.6 sans-serif;
+}
+
+li {
+  font: 1.8rem/1.6 sans-serif;
+}
+
+a {
+  font: inherit !important;
+}
+
+.nav ul a {
+  font: 2rem/1.5 "Butler", serif;
+}
+
+footer a {
+  font: 1.6rem/1.5 "Butler", serif;
+}
+
+body {
+  position: relative;
+}
+body .mobile-nav {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  body .mobile-nav div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 500;
+    margin: 1.2rem 0 0 0;
+  }
+  body .mobile-nav div ul {
+    padding: 0 0 0 2.4rem;
+    height: 100%;
+    text-align: right;
+    background-color: #fff;
+  }
+}
+@media (min-width: 500px) {
+  body .mobile-nav {
+    display: none;
+    flex-direction: unset;
+    align-content: unset;
+  }
+}
+
+@media (max-width: 500px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+@media (min-width: 500px) {
+  .desktop-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 500px) {
+  .desktop-nav ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 50%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
 /**!
  *  Theme Name: Tristan's Games
  *  Theme URI:  
@@ -69,5 +182,289 @@ p {
  *  Text Domain: games
  *  Tags: 
  *  */
+.front-page-header {
+  display: flex;
+  justify-content: center;
+}
+.front-page-header img {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 700px) {
+  .front-page-header img {
+    width: 50%;
+  }
+}
+
+.front-page section .thumbnail {
+  margin: 0 0 4.8rem 0;
+}
+.front-page section img {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .front-page section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .front-page section h2 {
+    width: 100%;
+  }
+  .front-page section img {
+    width: 100%;
+  }
+  .front-page section .thumbnail {
+    width: 48%;
+    height: 55rem;
+    overflow: hidden;
+  }
+  .front-page section .thumbnail:first-of-type {
+    margin: 0 4% 0 0;
+  }
+}
+.front-page section .thumbnail-review p:first-of-type {
+  font-style: italic;
+}
+.front-page section .thumbnail-review p:nth-of-type(2) {
+  height: 12rem;
+  overflow: hidden;
+}
+@media (min-width: 700px) {
+  .front-page section .thumbnail-review p:nth-of-type(2) {
+    width: 80%;
+  }
+}
+.front-page section .thumbnail-review a {
+  font-size: 1.6rem;
+  color: #777;
+}
+.front-page section .thumbnail-review h3 a {
+  color: #000;
+}
+
+.category-games h2 {
+  margin-bottom: 2.4rem;
+}
+.category-games section .thumbnail {
+  margin: 0 0 2.4rem 0;
+}
+.category-games section img {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .category-games section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .category-games section h2 {
+    width: 100%;
+  }
+  .category-games section img {
+    width: 100%;
+  }
+  .category-games section .thumbnail {
+    width: 48%;
+    height: 53rem;
+    overflow: hidden;
+  }
+  .category-games section .thumbnail:nth-of-type(odd) {
+    margin: 0 4% 0 0;
+  }
+}
+
+.category-reviews h2 {
+  margin-bottom: 2.4rem;
+}
+.category-reviews .thumbnail p:first-of-type {
+  font-style: italic;
+}
+.category-reviews .thumbnail p:nth-of-type(2) {
+  height: 12rem;
+  overflow: hidden;
+}
+@media (min-width: 700px) {
+  .category-reviews .thumbnail p:nth-of-type(2) {
+    width: 80%;
+  }
+}
+.category-reviews .thumbnail a {
+  font-size: 1.6rem;
+  color: #777;
+}
+.category-reviews .thumbnail h3 a {
+  color: #000;
+}
+
+.review header {
+  margin: 0 0 2.4rem 0;
+}
+.review header p {
+  margin: unset;
+}
+.review header p:nth-of-type(1) {
+  font-style: italic;
+}
+.review header p:nth-of-type(2) {
+  font-size: 1.4rem;
+  color: #777;
+}
+.review main section:first-of-type p::first-letter {
+  font: 5rem/0 "Butler", serif;
+}
+.review main section {
+  margin: 0 0 2.4rem 0;
+}
+.review main h3 {
+  margin: 0 0 1.2rem 0;
+}
+.review main img {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+.review footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3.6rem 0 0 0;
+}
+.review footer img {
+  border-radius: 50%;
+  width: 40%;
+  margin: 0 0 2.4rem 0;
+}
+.review footer p {
+  width: 80%;
+  font-size: 1.6rem;
+  color: #777;
+}
+@media (min-width: 700px) {
+  .review img {
+    float: left;
+    margin: 0 0.6rem 0 0;
+    width: 30%;
+  }
+  .review footer {
+    flex-direction: row;
+    margin: 4.8rem 0 0 0;
+  }
+  .review footer img {
+    width: 15%;
+    margin: 0 2% 0 0;
+  }
+  .review footer p {
+    width: 60%;
+  }
+}
+
+.single-game header img {
+  margin: 0 0 2.4rem 0;
+}
+.single-game h2 {
+  margin: 0 0 1.2rem 0;
+}
+.single-game section {
+  margin: 0 0 2.4rem 0;
+}
+.single-game img {
+  width: 100%;
+  margin: 0 0 1.2rem 0;
+}
+.single-game .video div {
+  margin: 0 0 1.2rem 0;
+}
+.single-game li:nth-child(odd) {
+  background-color: #e0efff;
+}
+@media (min-width: 700px) {
+  .single-game header {
+    display: grid;
+    grid-template-columns: [start] 40% [middle] auto;
+    grid-column-gap: 1.2rem;
+    grid-row-gap: 1.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .single-game header img {
+    grid-column-start: start;
+    grid-column-end: middle;
+    grid-row-start: row-start;
+    margin: unset;
+  }
+  .single-game header h2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+  }
+  .single-game header section {
+    width: 60%;
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+  .single-game header.played {
+    grid-template-rows: [row-start] 3rem [row-middle-1] auto [row-middle-2] auto;
+  }
+  .single-game header.played img {
+    grid-row-end: 3;
+  }
+  .single-game header.played h2 {
+    grid-row-end: 1;
+  }
+  .single-game header.played section {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .single-game header.upcoming {
+    grid-template-rows: [row-start] 3.1rem [row-middle-1] 6rem [row-middle-2] auto;
+  }
+  .single-game header.upcoming img {
+    grid-row-end: 4;
+  }
+  .single-game header.upcoming h2 {
+    grid-row-end: 2;
+  }
+  .single-game header.upcoming div {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .single-game header.upcoming section {
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  .single-game main section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .single-game main section h3 {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+  .single-game main section img {
+    flex-basis: 49%;
+  }
+  .single-game main section img:nth-of-type(odd) {
+    margin-right: 2%;
+  }
+  .single-game main section div {
+    flex-basis: 49%;
+  }
+  .single-game main section div:nth-of-type(odd) {
+    margin-right: 2%;
+  }
+}
+
+.nav {
+  margin-bottom: 2.4rem;
+}
+.nav span {
+  letter-spacing: -0.5rem;
+}
+
+footer {
+  margin: 2.4rem 0 1.2rem;
+}
 
 /*# sourceMappingURL=style.css.map */

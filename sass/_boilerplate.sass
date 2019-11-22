@@ -10,21 +10,31 @@ html
   &:after 
     box-sizing: border-box
 
+body 
+  margin: 1.2rem auto 0
+  width: 97%
+  @media (min-width: 768px)
+    width: 75%
+  @media (min-width: 1024px)
+    width: 60%
+    max-width: 980px
+
 a
-  &:link, &:visited 
-      color: #111
-      text-decoration: none
-      transition: 1s ease
+  &:link 
+    color: #111
+    text-decoration: none
+    transition: 1s ease
+  &:visited
+    color: #111
   &:hover, &:active
-      
-      transition: 1s ease
+    transition: 1s ease
 
-.mobile-menu 
-  display: flex
-  @media (min-width: 768px)
-    display: none
+hr 
+  width: 70%
+  color: #111
 
-.desktop-nav
-  display: none
-  @media (min-width: 768px)
-    display: flex
+p 
+  margin-bottom: 1.2rem
+
+
+

@@ -19,23 +19,18 @@ function tristan_games_styles()
 
 add_action('wp_enqueue_scripts', 'tristan_games_styles');
 
-
-//function creates a custom post type of movies
-function create_post_type_articles()
-{
-    // creates label names for the post type in the dashboard the post panel and in the toolbar.
- 
+function jargon_scripts () {
+    wp_enqueue_script("nav-menu",  get_template_directory_uri() . "/js/nav-menu.js");
 }
 
+add_action('wp_enqueue_scripts', 'jargon_scripts');
 
-// Change default "Enter Title Here" text 
-// for admin area based on CPT
 
 add_action('admin_head', 'hide_wp_title_input');
 function hide_wp_title_input()
 {
     $screen = get_current_screen();
-    if ($screen->id != 'article') {
+    if ($screen->id != 'game') {
         return;
     }
     ?>
@@ -47,20 +42,15 @@ function hide_wp_title_input()
   <?php
 }
 
-// you'll want to rename your  function
-// XXX => name of your post type
-function save_post_type_article($post_id) {
+// Change Auto Draft title that appears in the CMS with ACF plugin
+function save_post_type_game($post_id) {
     $post_type = get_post_type($post_id);
-    if ($post_type != 'article') {
+    if ($post_type != 'game') {
         return;
     }
 
-    // add the name of the filed that contains the 
-    // title YYYYYY = name of the group that contains the
-    // title
-    $header = get_field('title');
-    //ZZZZ ===> name of field for the title
-    $post_title = $header;
+    $header = get_field('header');
+    $post_title = $header['game_title'];
     $post_name = sanitize_title($post_title);
     $post = array(
         'ID' => $post_id,
@@ -70,6 +60,23 @@ function save_post_type_article($post_id) {
     wp_update_post($post);
 }
 
-add_action('acf/save_post', 'save_post_type_article'); 
+function save_post_type_review($post_id) {
+    $post_type = get_post_type($post_id);
+    if ($post_type != 'review') {
+        return;
+    }
 
+    $header = get_field('header');
+    $post_title = $header['review_title'];
+    $post_name = sanitize_title($post_title);
+    $post = array(
+        'ID' => $post_id,
+        'post_name' => $post_name,
+        'post_title' => $post_title
+    );
+    wp_update_post($post);
+}
+
+add_action('acf/save_post', 'save_post_type_game'); 
+add_action('acf/save_post', 'save_post_type_review'); 
 ?>
