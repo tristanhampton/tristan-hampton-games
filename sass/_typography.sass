@@ -1,6 +1,10 @@
 @font-face
     font-family: Butler
     src: url("assets/fonts/butler_regular.otf")
+
+@font-face 
+    font-family: Open-Sans
+    src: url("assets/fonts/OpenSansCondensed-Light.ttf")
     
 h1 
     font: 4.8rem/1.1 "Butler", serif
@@ -10,12 +14,14 @@ h2
 
 h3 
     font: 2.4rem/1.4 "Butler", serif
+    @media (min-width: 1024px)
+        font-size: 1.4vw
 
 p 
-    font: 1.8rem/1.6 sans-serif
+    font: 2rem/1.6 "Open-Sans", sans-serif
 
 li 
-    font: 1.8rem/1.6 sans-serif
+    font: 2.2rem/1.6 "Open-Sans", sans-serif
 
 a 
     font: inherit !important

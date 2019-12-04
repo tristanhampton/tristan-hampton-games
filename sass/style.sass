@@ -17,6 +17,10 @@
     Tags: 
     */
 
+$primary-colour: #000000
+$secondary-colour: #777777
+$alternate-colour: #e0efff
+
 .front-page-header 
     display: flex
     justify-content: center
@@ -32,24 +36,10 @@
         margin: 0 0 4.8rem 0
         .thumbnail 
             margin: 0 0 4.8rem 0
-        img 
-            width: 100%
-        @media (min-width: 700px)
-            display: flex 
-            flex-wrap: wrap
-            justify-content: flex-start
-            h2 
-                width: 100%
             img 
                 width: 100%
-            .thumbnail 
-                width: 32%
-                height: 40rem
-                overflow: hidden
-                margin: 0 2% 0 0 
-                &:last-of-type
-                    margin: 0
         .thumbnail-review 
+            margin: 0 0 4.8rem 0
             p
                 &:first-of-type
                     font-style: italic
@@ -60,10 +50,48 @@
                         width: 80%
             a 
                 font-size: 1.6rem
-                color: #777
+                color: $secondary-colour
             h3 
                 a 
-                    color: #000
+                    color: $primary-colour
+        .thumbnail-video
+            margin: 0 0 4.8rem 0
+            p 
+                font-size: 1.6rem
+                font-style: italic
+                color: $secondary-colour
+        @media (min-width: 700px)
+            display: flex
+            flex-wrap: wrap
+            justify-content: flex-start
+            h2 
+                width: 100%
+            img 
+                width: 100%
+            .thumbnail
+                width: 49%
+                height: 40rem
+                overflow: hidden
+                margin: 0 2% 2.4rem 0
+                @media (min-width: 700px) and (max-width: 1024px)
+                    &:nth-of-type(even)
+                        margin: 0
+        @media (min-width: 1024px)
+            img 
+                width: 100%
+            .thumbnail 
+                width: 24%
+                height: 16vw
+                overflow: hidden
+                margin: 0 1.333333% 0 0 
+                &:last-of-type
+                    margin: 0
+            .thumbnail-video 
+                width: 48%
+                margin-right: 4%
+                &:nth-of-type(2n)
+                    margin-right: 0
+                
 
 .category-games
     h2 
@@ -102,10 +130,28 @@
                     width: 80%
         a 
             font-size: 1.6rem
-            color: #777
+            color: $secondary-colour
         h3 
             a 
-                color: #000
+                color: $primary-colour
+
+.category-videos
+    .thumbnail
+        margin-bottom: 4.8rem
+    @media (min-width: 700px)
+        section
+            display: flex
+            justify-content: flex-start
+            flex-wrap: wrap
+        h2 
+            margin-bottom: 2.4rem
+            width: 100%
+        .thumbnail
+            width: 48%
+            margin-right: 4%
+            margin-bottom: 4.8rem
+            &:nth-of-type(2n)
+                margin-right: 0
                     
 
 .review 
@@ -117,7 +163,7 @@
                 font-style: italic
             &:nth-of-type(2)
                 font-size: 1.4rem
-                color: #777
+                color: $secondary-colour
     main 
         section:first-of-type
             p::first-letter
@@ -141,7 +187,7 @@
         p 
             width: 80%
             font-size: 1.6rem
-            color: #777
+            color: $secondary-colour
     @media (min-width: 700px)
         img 
             float: left
@@ -173,7 +219,7 @@
             margin: 0 0 1.2rem 0
     li 
         &:nth-child(odd) 
-            background-color: #e0efff
+            background-color: $alternate-colour
     @media (min-width: 700px)
         header
             display: grid

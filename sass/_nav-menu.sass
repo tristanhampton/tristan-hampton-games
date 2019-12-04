@@ -4,7 +4,7 @@ body
     display: flex
     justify-content: space-between
     div
-      @media (max-width: 500px)
+      @media (max-width: 700px)
         position: absolute
         right: 0
         top: 0
@@ -15,29 +15,46 @@ body
         z-index: 500
         margin: 1.2rem 0 0 0
         ul 
-          padding: 0 0 0 2.4rem
+          padding: 0 0 0 4.8rem
           height: 100%
           text-align: right
           background-color: #fff
-    @media (min-width: 500px)
+        li 
+          margin-bottom: 1.2rem
+    @media (min-width: 700px)
       display: none
       flex-direction: unset
       align-content: unset
 
 .desktop-nav
-  @media (max-width: 500px)
+  @media (max-width: 700px)
     display: none
-  @media (min-width: 500px)
+  @media (min-width: 700px)
       display: flex
       justify-content: space-between
       flex-direction: row
       align-items: center
   ul
-    @media (min-width: 500px)
+    @media (min-width: 700px)
       display: flex
-      justify-content: space-between
+      justify-content: flex-end
       flex-direction: row
-      width: 50%
+      li 
+        margin-right: 2.4rem
+        &:nth-last-of-type()
+          margin-right: 0
+          
 
 .hidden 
   display: none
+
+.login-button
+    border: 1px solid #000000
+    border-radius: 5px
+    padding: 0 1.2rem
+    transition: ease 1s
+    &:hover
+        background-color: #000
+        transition: ease 1s
+        a 
+            color: #fff

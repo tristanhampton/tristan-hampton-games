@@ -15,7 +15,8 @@
         <li><a href="http://tristanhampton.ca/games">Home</a></li>
         <li><a href="http://tristanhampton.ca/games/category/game/">Games</a></li>
         <li><a href="http://tristanhampton.ca/games/category/review/">Reviews</a></li>
-        <li><a href="http://tristanhampton.ca/games/wp-admin">Login</a></li>
+        <li><a href="http://tristanhampton.ca/games/category/video">Videos</a></li>
+        <li class="login-button"><a href="http://tristanhampton.ca/games/wp-admin">Login</a></li>
     </ul>
 </nav>
 
@@ -27,7 +28,8 @@
         <li><a href="http://tristanhampton.ca/games">Home</a></li>
         <li><a href="http://tristanhampton.ca/games/category/game/">Games</a></li>
         <li><a href="http://tristanhampton.ca/games/category/review/">Reviews</a></li>
-        <li><a href="http://tristanhampton.ca/games/wp-admin">Login</a></li>
+        <li><a href="http://tristanhampton.ca/games/category/video">Videos</a></li>
+        <li class="login-button"><a href="http://tristanhampton.ca/games/wp-admin">Login</a></li>
     </ul>
     </div>
 </aside>

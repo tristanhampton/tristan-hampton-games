@@ -77,6 +77,24 @@ function save_post_type_review($post_id) {
     wp_update_post($post);
 }
 
+function save_post_type_video($post_id) {
+    $post_type = get_post_type($post_id);
+    if ($post_type != 'twitter_video') {
+        return;
+    }
+
+    $post_title = get_field('title');
+    $post_name = sanitize_title($post_title);
+    $post = array(
+        'ID' => $post_id,
+        'post_name' => $post_name,
+        'post_title' => $post_title
+    );
+    wp_update_post($post);
+}
+
 add_action('acf/save_post', 'save_post_type_game'); 
 add_action('acf/save_post', 'save_post_type_review'); 
+add_action('acf/save_post', 'save_post_type_video'); 
+
 ?>
