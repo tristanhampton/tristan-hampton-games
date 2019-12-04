@@ -1,3 +1,5 @@
+@import 'variables'
+    
 @font-face
     font-family: Butler
     src: url("assets/fonts/butler_regular.otf")
@@ -14,7 +16,7 @@ h2
 
 h3 
     font: 2.4rem/1.4 "Butler", serif
-    @media (min-width: 1024px)
+    @media (min-width: $max)
         font-size: 1.4vw
 
 p 
@@ -25,6 +27,7 @@ li
 
 a 
     font: inherit !important
+    color: inherit !important
 
 .nav 
     ul

@@ -1,3 +1,5 @@
+@import 'variables'
+  
 html
   box-sizing: border-box
   font-size: 16px
@@ -13,9 +15,9 @@ html
 body 
   margin: 1.2rem auto 0
   width: 97%
-  @media (min-width: 700px)
+  @media (min-width: $min)
     width: 90%
-  @media (min-width: 1024px)
+  @media (min-width: $max)
     width: 60%
     max-width: 980px
 

@@ -21,29 +21,33 @@
     ?>
         <header class="<?php echo $class ?>">
             <img src="<?php echo $header['cover']; ?>" alt="">
-            <h2><?php echo $header['game_title']; ?></h2>
-            <?php if($upcoming): ?>
             <div>
-                <h3>Upcoming Release</h3>
-                <p><?php echo date("F j, Y", $release); ?></p>
-            </div>
-            <?php endif ?>
-            
-            <!-- SYSTEMS -->
-            <section class="systems">
-                <h3>Available Systems</h3>
-                <?php if($systems): ?>
-                <ul>
-                    <?php foreach($systems as $system) :?>
-                    <li><?php echo $system['system']; if(count($systems) == 1) { echo " (Console Exclusive)";} ?></li>
-                    <?php endforeach ?>
-                </ul>
+                <h2><?php echo $header['game_title']; ?></h2>
+                <?php if($upcoming): ?>
+                <div>
+                    <h3>Upcoming Release</h3>
+                    <p><?php echo date("F j, Y", $release); ?></p>
+                </div>
                 <?php endif ?>
-            </section>
+                
+                <!-- SYSTEMS -->
+                <div class="systems">
+                    <h3>Available Systems</h3>
+                    <?php if($systems): ?>
+                    <ul>
+                        <?php foreach($systems as $system) :?>
+                        <li><?php echo $system['system']; if(count($systems) == 1) { echo " (Console Exclusive)";} ?></li>
+                        <?php endforeach ?>
+                    </ul>
+                    <?php endif ?>
+                </div>
+            </div>
         </header>
         <main>
             <!-- DESCRIPTION -->
-            <?php echo $description; ?>
+            <section>
+                <?php echo $description; ?>
+            </section>
 
             <!-- SCREENSHOTS -->
             <?php if($screenshots): ?>

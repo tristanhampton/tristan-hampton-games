@@ -4,7 +4,7 @@
   <section>
     <h2>Videos</h2>
     <?php while($query -> have_posts()): $query -> the_post(); ?>
-      <div class="thumbnail">
+      <div class="thumbnail-video">
         <a href="<?php the_permalink() ?>">
           <h3><?php the_field('title') ?></h3>
           <p><?php the_field('tagline') ?></p>

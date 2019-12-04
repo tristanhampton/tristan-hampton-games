@@ -1,0 +1,69 @@
+@import 'variables'
+    
+@mixin thumbnail-display-small
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    h2 
+        width: 100%
+    img 
+        width: 100%
+    .thumbnail 
+        width: 24%
+        height: 16vw 
+        overflow: hidden
+        margin: 0 1.333333% 2.4rem 0
+        &:nth-of-type(4n)
+            margin-right: 0
+
+@mixin thumbnail-display-large
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    h2 
+        width: 100%
+    img 
+        width: 100%
+    .thumbnail 
+        width: 49%
+        height: 40vw 
+        overflow: hidden
+        margin: 0 2% 2.4rem 0
+        @media (min-width: $min) and (max-width: $max)
+            &:nth-of-type(2n)
+                margin-right: 0
+
+@mixin text-thumbnail 
+    margin: 0 0 2.4rem 0
+    h3 
+        color: $primary-colour
+    p:first-of-type
+        font-style: italic
+    p:nth-of-type(2)
+        height: 12rem
+        overflow: hidden
+        @media (min-width: $min)
+            width: 80%
+    p:nth-of-type(3) 
+        color: $secondary-colour
+
+@mixin tweet-thumbnail 
+    .thumbnail-video
+        margin: 0 0 4.8rem 0
+        p 
+            font-size: 1.6rem
+            font-style: italic
+            color: $secondary-colour
+    @media (min-width: $min)
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        .thumbnail-video
+            margin: 0 4% 2.4rem 0
+            width: 48%
+            &:nth-of-type(2n)
+                margin-right: 0
+        h3
+            width: 100%
+        p 
+            width: 100%

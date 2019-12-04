@@ -86,6 +86,7 @@ li {
 
 a {
   font: inherit !important;
+  color: inherit !important;
 }
 
 .nav ul a {
@@ -171,7 +172,7 @@ body .mobile-nav {
   transition: ease 1s;
 }
 .login-button:hover {
-  background-color: #000;
+  background-color: #000000;
   transition: ease 1s;
 }
 .login-button:hover a {
@@ -237,7 +238,10 @@ body .mobile-nav {
   width: 100%;
 }
 .front-page section .thumbnail-review {
-  margin: 0 0 4.8rem 0;
+  margin: 0 0 2.4rem 0;
+}
+.front-page section .thumbnail-review h3 {
+  color: #000000;
 }
 .front-page section .thumbnail-review p:first-of-type {
   font-style: italic;
@@ -251,12 +255,8 @@ body .mobile-nav {
     width: 80%;
   }
 }
-.front-page section .thumbnail-review a {
-  font-size: 1.6rem;
+.front-page section .thumbnail-review p:nth-of-type(3) {
   color: #777777;
-}
-.front-page section .thumbnail-review h3 a {
-  color: #000000;
 }
 .front-page section .thumbnail-video {
   margin: 0 0 4.8rem 0;
@@ -272,6 +272,26 @@ body .mobile-nav {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+  .front-page section .thumbnail-video {
+    margin: 0 4% 2.4rem 0;
+    width: 48%;
+  }
+  .front-page section .thumbnail-video:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .front-page section h3 {
+    width: 100%;
+  }
+  .front-page section p {
+    width: 100%;
+  }
+}
+@media (min-width: 700px) {
+  .front-page section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
   .front-page section h2 {
     width: 100%;
   }
@@ -280,17 +300,25 @@ body .mobile-nav {
   }
   .front-page section .thumbnail {
     width: 49%;
-    height: 40rem;
+    height: 40vw;
     overflow: hidden;
     margin: 0 2% 2.4rem 0;
   }
 }
 @media (min-width: 700px) and (min-width: 700px) and (max-width: 1024px) {
-  .front-page section .thumbnail:nth-of-type(even) {
-    margin: 0;
+  .front-page section .thumbnail:nth-of-type(2n) {
+    margin-right: 0;
   }
 }
 @media (min-width: 1024px) {
+  .front-page section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .front-page section h2 {
+    width: 100%;
+  }
   .front-page section img {
     width: 100%;
   }
@@ -298,16 +326,9 @@ body .mobile-nav {
     width: 24%;
     height: 16vw;
     overflow: hidden;
-    margin: 0 1.333333% 0 0;
+    margin: 0 1.333333% 2.4rem 0;
   }
-  .front-page section .thumbnail:last-of-type {
-    margin: 0;
-  }
-  .front-page section .thumbnail-video {
-    width: 48%;
-    margin-right: 4%;
-  }
-  .front-page section .thumbnail-video:nth-of-type(2n) {
+  .front-page section .thumbnail:nth-of-type(4n) {
     margin-right: 0;
   }
 }
@@ -334,17 +355,24 @@ body .mobile-nav {
     width: 100%;
   }
   .category-games section .thumbnail {
-    width: 48%;
-    height: 53rem;
+    width: 24%;
+    height: 16vw;
     overflow: hidden;
+    margin: 0 1.333333% 2.4rem 0;
   }
-  .category-games section .thumbnail:nth-of-type(odd) {
-    margin: 0 4% 0 0;
+  .category-games section .thumbnail:nth-of-type(4n) {
+    margin-right: 0;
   }
 }
 
 .category-reviews h2 {
   margin-bottom: 2.4rem;
+}
+.category-reviews .thumbnail {
+  margin: 0 0 2.4rem 0;
+}
+.category-reviews .thumbnail h3 {
+  color: #000000;
 }
 .category-reviews .thumbnail p:first-of-type {
   font-style: italic;
@@ -358,34 +386,40 @@ body .mobile-nav {
     width: 80%;
   }
 }
-.category-reviews .thumbnail a {
-  font-size: 1.6rem;
+.category-reviews .thumbnail p:nth-of-type(3) {
   color: #777777;
 }
-.category-reviews .thumbnail h3 a {
-  color: #000000;
-}
 
-.category-videos .thumbnail {
-  margin-bottom: 4.8rem;
+.category-videos h2 {
+  margin-bottom: 2.4rem;
+  width: 100%;
+}
+.category-videos section .thumbnail-video {
+  margin: 0 0 4.8rem 0;
+}
+.category-videos section .thumbnail-video p {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #777777;
 }
 @media (min-width: 700px) {
   .category-videos section {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
-  .category-videos h2 {
-    margin-bottom: 2.4rem;
+  .category-videos section .thumbnail-video {
+    margin: 0 4% 2.4rem 0;
+    width: 48%;
+  }
+  .category-videos section .thumbnail-video:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .category-videos section h3 {
     width: 100%;
   }
-  .category-videos .thumbnail {
-    width: 48%;
-    margin-right: 4%;
-    margin-bottom: 4.8rem;
-  }
-  .category-videos .thumbnail:nth-of-type(2n) {
-    margin-right: 0;
+  .category-videos section p {
+    width: 100%;
   }
 }
 
@@ -456,7 +490,7 @@ body .mobile-nav {
 .single-game h2 {
   margin: 0 0 1.2rem 0;
 }
-.single-game section {
+.single-game div {
   margin: 0 0 2.4rem 0;
 }
 .single-game img {
@@ -471,64 +505,18 @@ body .mobile-nav {
 }
 @media (min-width: 700px) {
   .single-game header {
-    display: grid;
-    grid-template-columns: [start] 40% [middle] auto;
-    grid-column-gap: 1.2rem;
-    grid-row-gap: 1.2rem;
     margin-bottom: 2.4rem;
+    display: flex;
   }
   .single-game header img {
-    grid-column-start: start;
-    grid-column-end: middle;
-    grid-row-start: row-start;
-    margin: unset;
-  }
-  .single-game header h2 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-  }
-  .single-game header section {
-    width: 60%;
-    grid-column-start: 2;
-    grid-column-end: 2;
-  }
-  .single-game header.played {
-    grid-template-rows: [row-start] 3rem [row-middle-1] auto [row-middle-2] auto;
-  }
-  .single-game header.played img {
-    grid-row-end: 3;
-  }
-  .single-game header.played h2 {
-    grid-row-end: 1;
-  }
-  .single-game header.played section {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .single-game header.upcoming {
-    grid-template-rows: [row-start] 3.1rem [row-middle-1] 6rem [row-middle-2] auto;
-  }
-  .single-game header.upcoming img {
-    grid-row-end: 4;
-  }
-  .single-game header.upcoming h2 {
-    grid-row-end: 2;
-  }
-  .single-game header.upcoming div {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  .single-game header.upcoming section {
-    grid-row-start: 3;
-    grid-row-end: 4;
+    margin: 0 2.4rem 0 0;
+    width: 49%;
   }
   .single-game main section {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-bottom: 2.4rem;
   }
   .single-game main section h3 {
     width: 100%;
